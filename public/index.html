@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PortfolioAI Trade Execution</title>
+<style>
+  :root {
+    --navy: #1B365D; --teal: #006B6B; --bg: #F2F5F9; --border: #D8DFE8;
+    --red: #A32D2D; --green: #1E7B4D;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, Segoe UI, Calibri, sans-serif; background: #fff; color: var(--navy); margin: 0; padding: 24px; max-width: 760px; margin-inline: auto; }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .sub { color: #6B7785; font-size: 13px; margin-bottom: 20px; }
+  .card { border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 14px; background: var(--bg); }
+  .card h3 { margin: 0 0 6px; font-size: 16px; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px; margin-left: 8px; }
+  .badge.BUY { background: #1E7B4D22; color: var(--green); }
+  .badge.SELL { background: #A32D2D22; color: var(--red); }
+  .badge.HOLD { background: #6B778522; color: #6B7785; }
+  .reasoning { font-size: 13px; color: #334; margin: 6px 0; }
+  .row { display: flex; gap: 8px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
+  input[type=number] { padding: 8px; border: 1px solid var(--border); border-radius: 6px; width: 120px; }
+  select { padding: 8px; border: 1px solid var(--border); border-radius: 6px; }
+  button { padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+  button.primary { background: var(--navy); color: #fff; }
+  button.confirm { background: var(--green); color: #fff; }
+  button.cancel { background: #fff; color: var(--navy); border: 1px solid var(--border); }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  .confirm-box { border: 2px dashed var(--navy); border-radius: 8px; padding: 12px; margin-top: 10px; background: #fff; }
+  .orders h2 { font-size: 16px; margin-top: 28px; }
+  .order-row { display: flex; justify-content: space-between; font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .status { font-weight: 700; }
+  .status.FILLED { color: var(--green); }
+  .status.REJECTED, .status.CANCELLED { color: var(--red); }
+  .status.PENDING, .status.SUBMITTING { color: #a8730c; }
+  .empty { color: #6B7785; font-size: 13px; }
+</style>
+</head>
+<body>
+  <h1>PortfolioAI Trade Execution</h1>
+  <div class="sub">Recommendations come in from PortfolioAI. Nothing reaches the trading desk until you confirm it below.</div>
+
+  <div id="recs"></div>
+
+  <div class="orders">
+    <h2>Orders</h2>
+    <div id="orders"></div>
+  </div>
+
+<script src="/app.js"></script>
+</body>
+</html>

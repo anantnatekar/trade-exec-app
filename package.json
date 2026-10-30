@@ -1,0 +1,17 @@
+{
+  "name": "portfolioai-trade-exec",
+  "version": "1.0.0",
+  "description": "Takes PortfolioAI BUY/HOLD/SELL recommendations, lets a user confirm quantity/notional and approve, then submits the order to a trading desk API and notifies the user on completion.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "dotenv": "^16.4.5",
+    "nanoid": "^3.3.7",
+    "nodemailer": "^6.9.14"
+  }
+}
